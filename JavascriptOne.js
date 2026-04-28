@@ -178,7 +178,7 @@ FDe.addEventListener("click", function(){
 
 const expoBtn = document.getElementById("exportBtn");
 
-expoBtn.addEventListener("click", function(){
+function exporter(){
     const currentText = textArea.value;
 
     
@@ -207,4 +207,16 @@ expoBtn.addEventListener("click", function(){
     a.click();
 
     URL.revokeObjectURL(url);
-})
+}
+
+expoBtn.addEventListener("click", function(){exporter()})
+
+window.addEventListener("keydown", function(event){
+    if (event.ctrlKey && (event.key === "e" || event.key === "E")) {
+        textArea.readOnly = true;
+        exporter();
+        event.preventDefault();
+        textArea.readOnly = false;
+    }
+});
+

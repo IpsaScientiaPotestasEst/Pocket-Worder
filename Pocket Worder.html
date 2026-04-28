@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="icon" type="image/svg+xml" href="PocketFaviconNewest.svg">
+
+    <title>Pocket Worder</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a0033, #001a33);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            color: white;
+        }
+
+      
+        #bar {
+            display: flex;
+            gap: 12px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(6px);
+            border-radius: 10px;
+            outline: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .subBar {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s ease;
+        }
+
+        .subBar:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        
+        #textElement {
+            width: 65%;
+            height: 350px;
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            outline: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 15px;
+            resize: none;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+       
+        #outputTwo {
+            font-size: 18px;
+            color: #e6e6e6;
+        }
+
+       
+        #output {
+            width: 65%;
+            max-width: 650px;
+            height: 220px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: normal;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.15);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="bar">
+
+        <button id="F-In" class="subBar">Increase Font size
+            
+            <br>
+
+            <div id="FOutputOne"></div>
+        
+        </button>
+
+        <button id="F-De" class="subBar">Decrease Font size
+
+            <br>
+            
+            <div id="FOutputTwo"></div>
+        
+        </button>
+
+        <button id="exportBtn" class="subBar"><span
+             style="color: rgb(255, 0, 0)">Export</button>
+
+    </div>
+
+    <textarea id="textElement" placeholder="Type Here:"></textarea>
+
+    <div id="outputTwo"></div>
+
+    <div id="output"></div>
+
+    <script src="JavascriptOne.js"></script>
+
+</body>
+
+</html>

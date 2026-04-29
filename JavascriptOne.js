@@ -211,11 +211,11 @@ function exporter(){
 
 expoBtn.addEventListener("click", function(){exporter()})
 
-window.addEventListener("keydown", function(event){
-    if (event.key === "Control" && event.key === "e" || event.key === "E") {
+window.addEventListener("keydown", function(event) {
+    if (event.ctrlKey && event.key.toLowerCase() === "e") {
+        event.preventDefault();
         textArea.readOnly = true;
         exporter();
-        event.preventDefault();
         textArea.readOnly = false;
     }
 });

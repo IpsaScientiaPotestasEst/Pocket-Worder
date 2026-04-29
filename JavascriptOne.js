@@ -212,7 +212,7 @@ function exporter(){
 expoBtn.addEventListener("click", function(){exporter()})
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === "Function" && event.key.toLowerCase() === "e" {
+    if (event.key === "Function" && event.key === "e" {
         event.preventDefault();
         textArea.readOnly = true;
         exporter();

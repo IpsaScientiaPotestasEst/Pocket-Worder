@@ -209,14 +209,15 @@ function exporter(){
     URL.revokeObjectURL(url);
 }
 
-expoBtn.addEventListener("click", function(){exporter()})
+expoBtn.addEventListener("click", function(){
+    exporter();
+})
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "AltKey" && event.key === "e" {
-        event.preventDefault();
+window.addEventListener("keydown", function(event){
+    if (event.key === "Function" && event.key === "e" || event.key === "E") {
         textArea.readOnly = true;
         exporter();
-        textArea.readOnly = false;
-    }
-});
+        textArea.readOnly = false;        
 
+    }
+})

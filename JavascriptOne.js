@@ -49,7 +49,10 @@ textArea.addEventListener("input", function () {
 
     const text = textArea.value;
 
+
     localStorage.setItem("Data", text);
+
+   
 
     const outputTwo = document.getElementById("outputTwo");
 
@@ -59,9 +62,6 @@ textArea.addEventListener("input", function () {
         output.textContent = ""
         return;
     }
-
-
-
 
 
 
@@ -99,6 +99,10 @@ textArea.addEventListener("input", function (event) {
     textArea.value = text;
 
     output.textContent = text;
+
+   
+
+
 
     localStorage.setItem("count", zero);
 
@@ -222,15 +226,23 @@ function exporter() {
 
 expoBtn.addEventListener("click", function () { exporter() })
 
+setInterval(() => {
+         const saveOut = document.getElementById("saveOut");
+     
+        if (!localStorage.getItem("Data")) {
+        saveOut.textContent = "No items to save"; 
+    }
+    if (saved == null) {
+        saveOut.textContent = "Not saved"; 
+    }
 
+       if (localStorage.getItem("Data") || localStorage.getItem("saved")) {
+        saveOut.textContent = "Saved"; 
+    }
 
+    
 
-
-
-
-
-
-
+},500)
 
 
 

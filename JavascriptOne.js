@@ -47,14 +47,41 @@ else {
 
 textArea.addEventListener("input", function () {
 
-    const text = textArea.value;
+    const outputTwo = document.getElementById("outputTwo");
+    let text = textArea.value;
+    let v = text;
+    const fontOne = document.getElementById("FOutputOne");
+    const fontTwo = document.getElementById("FOutputTwo");
+
+
+
+    fontOne.innerHTML = "Font size: " + X;
+    fontTwo.innerHTML = "Font size: " + X;
+
+    v = v.replace(/([.!?]\s+)([a-z])/g, (match, before, letter) => {
+        return before + letter.toUpperCase();
+    });
+
+    output.textContent = v;
+
+    let zero = text.replace(/ /g, "").length;
+   
+
+    outputTwo.textContent = zero + " characters";
+    
+    
+
+    if (zero == 0) { outputTwo.textContent = "" }
+
+    if (zero == 1) { outputTwo.textContent = zero + " character" }
+
+
+    localStorage.setItem("count", zero);
 
 
     localStorage.setItem("Data", text);
 
-   
 
-    const outputTwo = document.getElementById("outputTwo");
 
     if (text.trim() === "") {
         localStorage.clear();
@@ -65,49 +92,10 @@ textArea.addEventListener("input", function () {
 
 
 
-    output.textContent = text;
 
 })
 
 
-
-
-
-textArea.addEventListener("input", function (event) {
-    const outputTwo = document.getElementById("outputTwo");
-    let text = textArea.value;
-    let zero = text.length;
-    let v = text;
-    const fontOne = document.getElementById("FOutputOne");
-    const fontTwo = document.getElementById("FOutputTwo");
-
-    outputTwo.textContent = zero + " characters";
-
-    if (zero == 0) { outputTwo.textContent = "" }
-
-    if (zero == 1) { outputTwo.textContent = zero + " character" }
-
-    fontOne.innerHTML = "Font size: " + X;
-    fontTwo.innerHTML = "Font size: " + X;
-
-    v = v.replace(/([.!?]\s+)([a-z])/g, (match, before, letter) => {
-        return before + letter.toUpperCase();
-    });
-
-    text = v;
-
-    textArea.value = text;
-
-    output.textContent = text;
-
-   
-
-
-
-    localStorage.setItem("count", zero);
-
-
-})
 
 function onloads() { textArea.focus() }
 
@@ -227,22 +215,21 @@ function exporter() {
 expoBtn.addEventListener("click", function () { exporter() })
 
 setInterval(() => {
-         const saveOut = document.getElementById("saveOut");
-     
-        if (!localStorage.getItem("Data")) {
-        saveOut.textContent = "No items to save"; 
+    const saveOut = document.getElementById("saveOut");
+
+    if (!localStorage.getItem("Data")) {
+        saveOut.textContent = "No items to save";
     }
     if (saved == null) {
-        saveOut.textContent = "Not saved"; 
+        saveOut.textContent = "Not saved";
     }
 
-       if (localStorage.getItem("Data") || localStorage.getItem("saved")) {
-        saveOut.textContent = "Saved"; 
+    if (localStorage.getItem("Data") || localStorage.getItem("saved")) {
+        saveOut.textContent = "Saved";
     }
 
-    
 
-},500)
 
+}, 500)
 
 

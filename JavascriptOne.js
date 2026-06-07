@@ -62,7 +62,7 @@ textArea.addEventListener("input", function () {
         return before + letter.toUpperCase();
     });
 
-    textArea.textContent = v;
+    textArea.value = v;
 
     output.textContent = v;
 

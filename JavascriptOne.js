@@ -62,6 +62,8 @@ textArea.addEventListener("input", function () {
         return before + letter.toUpperCase();
     });
 
+    textarea.textcontent = v;
+
     output.textContent = v;
 
     let zero = text.replace(/ /g, "").length;
